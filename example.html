@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Example</title>
+</head>
+<body>
+<div id='output'>Click here to convert <span id='o1'>rgb(12,88,120)</span>, and <span id='o2'>12,88,120</span>.</div>
+<script src="function.js"></script>
+<script>
+document.querySelector("#output").addEventListener("click", function() {
+    const element = document.querySelector("#o1");
+    if (element) {
+        const result = rgbStringToHex(element.innerHTML);
+        element.innerHTML = result;
+    }
+});
+document.querySelector("#output").addEventListener("click", function() {
+    const element = document.querySelector("#o2");
+    if (element) {
+    		const anArray = element.innerHTML.split(",");
+        const result = rgbToHex(anArray[0], anArray[1], anArray[2]);
+        element.innerHTML = result;
+    }
+});
+</script>
+</body>
+</html>
